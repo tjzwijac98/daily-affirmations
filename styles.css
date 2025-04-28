@@ -24,6 +24,8 @@ button{font-family: "Comic Sans MS", sans-serif, sans-serif;
     transition: 0.3s;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    color: black;
+
 }
 @keyframes chgcolor {
     0%   {color:black;}
