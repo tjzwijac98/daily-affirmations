@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<html>
+
+<head>
+    <title>Daily Affirmations</title>
+</head>
+<body>
+<link rel="stylesheet" href="styles.css" />
+<h1>&#128302; Daily Affirmations &#128302;</h1>
+<!--<p>Count: <span id="counter">0</span></p>-->
+<p id="demo"></p>
+<button id="myButton">&#x2728; Click Me &#x2728;</button>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<!--<button id="myClearButton">Clear Counter</button>-->
+
+<script>
+    let count = -1;
+    const counterDisplay = document.getElementById("counter");
+    const button = document.getElementById("myButton");
+   //const buttonClear = document.getElementById("myClearButton");
+    const myJSON ='{   "affirmation": [     "I am worthy of love and respect.",     "I believe in myself and my abilities.",     "I am in charge of how I feel today.",     "I radiate positivity and attract good things.",     "I am resilient and can handle any challenge.",     "I am growing and becoming the best version of myself.",     "I am grateful for today.",     "I choose happiness over fear.",     "I trust the process of life.",     "I deserve success and prosperity.",     "I am enough just as I am.",     "I let go of what I can not control.",     "I am calm, patient, and in control.",     "I embrace change and welcome new opportunities.",     "I am surrounded by love and support.",     "I have the power to create my own reality.",     "I am healthy, strong, and full of energy.",     "I release negative thoughts and focus on the positive.",     "I trust myself to make the right decisions.",     "I am constantly learning and evolving.",     "I am open to abundance in all areas of my life.",     "I forgive myself and others easily.",     "I choose peace over worry.",     "I am proud of my accomplishments.",     "I am confident and courageous.",     "I bring value to the world.",     "I am a magnet for joy and success.",     "I am aligned with my purpose.",     "I wake up every day with clarity and focus.",     "I trust that everything is unfolding perfectly.",     "I attract kind and compassionate people.",     "I am at peace with who I am.",     "I am capable of achieving great things.",     "I deserve all the good life has to offer.",     "I am surrounded by positive energy.",     "I trust the timing of my life.",     "I love and accept myself unconditionally.",     "I am guided by intuition and wisdom.",     "I handle setbacks with grace and ease.",     "I am grounded, mindful, and present.",     "I focus on what I can control and let go of the rest.",     "I radiate confidence and self-assurance.",     "I am always learning and growing.",     "I make a positive impact on those around me.",     "I honor my body and treat it with respect.",     "I choose to see the good in every situation.",     "I am free to be myself.",     "I am deserving of all my dreams.",     "I trust that good things are on their way.",     "I express gratitude daily.",     "I am worthy of success and joy.",     "I let go of fear and embrace love.",     "I am powerful beyond measure.",     "I give myself permission to rest and recharge.",     "I attract opportunities effortlessly.",     "I am proud of who I am becoming.",     "I deserve time for self-care.",     "I choose thoughts that empower me.",     "I am becoming more confident every day.",     "I trust in my unique journey.",     "I speak kindly to myself and others.",     "I allow abundance to flow into my life.",     "I have everything I need within me.",     "I am open to receiving love.",     "I release the past and welcome the present.",     "I am fearless in the pursuit of my goals.",     "I welcome each day with joy and hope.",     "I embrace my uniqueness.",     "I find beauty in the small things.",     "I am surrounded by inspiration.",     "I choose to respond with kindness.",     "I am free from limiting beliefs.",     "I am a creator of peace in my heart and soul.",     "I give myself space to grow and heal.",     "I celebrate my progress, no matter how small.",     "I choose faith over fear.",     "I am resilient and adaptable.",     "I trust myself to overcome any obstacle.",     "I am love, I am light, I am peace.",     "I release self-doubt and welcome self-love.",     "I am committed to my personal growth.",     "I radiate happiness and positivity.",     "I choose to nourish my mind, body, and soul.",     "I attract balance and harmony into my life.",     "I am surrounded by endless possibilities.",     "I honor my emotions and let them guide me.",     "I am more than enough.",     "I am in love with the person I am becoming.",     "I am supported in all I do.",     "I choose joy in every moment.",     "I trust that everything happens for my highest good.",     "I deserve to be happy and successful.",     "I accept and embrace all experiences, even unpleasant ones.",     "I am patient and persistent.",     "I believe in the person I am becoming.",     "I create my own happiness.",     "I am thankful for this moment.",     "I show up every day with purpose.",     "I am worthy of healing.",     "I live with intention and purpose.",     "I welcome love, success, and happiness into my life.",     "I am in harmony with my surroundings.",     "I choose to shine today.",     "I am open to new ideas and perspectives.",     "I am the author of my own story."   ] }'
+
+    const myObj = JSON.parse(myJSON);
+
+
+    button.addEventListener("click", function() {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+        });
+        //count++;
+       // counterDisplay.textContent = count;
+        //document.getElementById("demo").innerHTML = myObj.affirmation[count];
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+
+        }
+        let randomNumber = getRandomIntInclusive(1, 99);
+        document.getElementById("demo").innerHTML = myObj.affirmation[randomNumber];
+        counterDisplay.textContent = randomNumber;
+
+
+        console.log(randomNumber);
+
+    });
+    //buttonClear.addEventListener("click", function() {
+    //    count = 0;
+        //add in button to copy text to clipboard
+       // document.getElementById("demo").innerHTML = myObj.affirmation[count];
+    //});
+
+
+
+
+</script>
+
+
+<script>
+
+</script>
+</body>
+</html>
